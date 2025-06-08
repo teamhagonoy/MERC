@@ -115,6 +115,7 @@ body, html {
   z-index: 10;
   padding: 20px;
   border-radius: 12px;
+  background: none;
 }
 
 .hero-overlay h1 {
