@@ -1,5 +1,5 @@
 
-document.getElementById("menu-button").onclick = () => {
+function toggleMenu() {
   const list = document.getElementById("amenity-list");
-  list.style.display = list.style.display === "none" ? "block" : "none";
-};
+  list.style.display = list.style.display === "block" ? "none" : "block";
+}

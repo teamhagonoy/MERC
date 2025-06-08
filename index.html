@@ -2,28 +2,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MERC Walkthrough</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Mangrove Eco Park Resort Complex</h1>
-  <div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/9hZqr1D-aBE" frameborder="0" allowfullscreen></iframe>
+  <div class="video-bg">
+    <iframe src="https://www.youtube.com/embed/9hZqr1D-aBE?autoplay=1&mute=1&loop=1&playlist=9hZqr1D-aBE"
+      frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
   </div>
-  <button id="menu-button">Menu</button>
-  <ul id="amenity-list" style="display: none;">
-    <li><a href="amenities/1-storey-villa.html">1-Storey Villa</a></li>
-    <li><a href="amenities/2-storey-villa.html">2-Storey Villa</a></li>
-    <li><a href="amenities/coastal-market.html">Coastal Market</a></li>
-    <li><a href="amenities/function-hall.html">Function Hall</a></li>
-    <li><a href="amenities/grilling-area.html">Grilling Area</a></li>
-    <li><a href="amenities/cottages.html">Cottages</a></li>
-    <li><a href="amenities/mangrove-nursery.html">Mangrove Nursery</a></li>
-    <li><a href="amenities/open-restaurant.html">Open Restaurant</a></li>
-    <li><a href="amenities/observation-deck.html">Observation Deck</a></li>
-  </ul>
+
+  <div id="menu-wrapper">
+    <div id="menu-button" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul id="amenity-list">
+      <li><a href="amenities/1-storey-villa.html">1-Storey Villa</a></li>
+      <li><a href="amenities/2-storey-villa.html">2-Storey Villa</a></li>
+      <li><a href="amenities/coastal-market.html">Coastal Market</a></li>
+      <li><a href="amenities/function-hall.html">Function Hall</a></li>
+      <li><a href="amenities/grilling-area.html">Grilling Area</a></li>
+      <li><a href="amenities/cottages.html">Cottages</a></li>
+      <li><a href="amenities/mangrove-nursery.html">Mangrove Nursery</a></li>
+      <li><a href="amenities/open-restaurant.html">Open Restaurant</a></li>
+      <li><a href="amenities/observation-deck.html">Observation Deck</a></li>
+    </ul>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
