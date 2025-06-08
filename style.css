@@ -1,0 +1,22 @@
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f8ff;
+  padding: 20px;
+}
+.video-container {
+  margin: 20px auto;
+}
+#menu-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+#amenity-list {
+  list-style-type: none;
+  padding: 0;
+}
+#amenity-list li {
+  margin: 10px 0;
+}
