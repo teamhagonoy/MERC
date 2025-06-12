@@ -60,7 +60,7 @@ html, body {
 }
 .hero-overlay.shrink {
   top: 10px;
-  left: 15%;
+  left: 20%;
   transform: translateX(-50%) scale(0.4);
   border-radius: 10px;
   padding: 5px;
