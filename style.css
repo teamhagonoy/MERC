@@ -1,190 +1,190 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
 
-*::-webkit-scrollbar {
-  display: none;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-html, body {
-  height: auto;
-  min-height: 100vh;
-  font-family: 'DM Sans', sans-serif;
-  overflow-x: hidden;
-  background: #000;
-}
-
-/* Background Video */
-.video-bg {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  overflow: hidden;
-  z-index: -1;
-  background: #000;
-}
-
-.video-wrapper {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 100vw; height: 100vh;
-  transform: translate(-50%, -50%);
-}
-
-.video-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  pointer-events: none;
-}
-
-.mobile-bg-fallback {
-  display: none;
-  background: url('assets/bg.jpg') center center / cover no-repeat;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-@media (max-width: 768px) {
-  .video-wrapper {
+  *::-webkit-scrollbar {
     display: none;
   }
-  .mobile-bg-fallback {
-    display: block;
+
+  html {
+    scroll-behavior: smooth;
   }
-}
 
-/* Hero Overlay */
-.hero-overlay {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  max-width: 80vw;
-  max-height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(5px);
-  border-radius: 12px;
-  transition: all 0.4s ease;
-  transform-origin: top center;
-}
+  html, body {
+    height: auto;
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    background: #000;
+  }
 
-.hero-overlay.shrink {
-  top: 10px;
-  left: 10px;
-  transform: scale(0.4);
-  border-radius: 10px;
-  padding: 5px;
-  backdrop-filter: blur(10px);
-}
+  /* Background Video */
+  .video-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    background: #000;
+  }
 
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-  transition: all 0.4s ease;
-}
+  .video-wrapper {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100vw; height: 100vh;
+    transform: translate(-50%, -50%);
+  }
 
-.hero-overlay.shrink .hero-content h2 {
-  opacity: 0;
-}
+  .video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: none;
+  }
 
-.hero-logo {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
-  transition: all 0.4s ease;
-}
+  .mobile-bg-fallback {
+    display: none;
+    background: url('assets/bg.jpg') center center / cover no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
-.hero-content h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  color: #fff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  margin: 0;
-  transition: all 0.4s ease;
-}
+  @media (max-width: 768px) {
+    .video-wrapper {
+      display: none;
+    }
+    .mobile-bg-fallback {
+      display: block;
+    }
+  }
 
-/* Spacer for scroll */
-.spacer {
-  height: 120vh;
-}
-
-/* Credits Section */
-.credits {
-  width: 100%;
-  max-width: 600px;
-  margin: 10vh auto 5vh auto;
-  padding: 30px 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 12px;
-  text-align: center;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease;
-}
-
-.credits.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.credits h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
-}
-
-.credits ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.credits ul li {
-  font-size: 1rem;
-  margin: 4px 0;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
+  /* Hero Overlay */
   .hero-overlay {
-    max-width: 70vw;
-    max-height: 30vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    max-width: 80vw;
+    max-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    transform-origin: top center;
+  }
+
+  .hero-overlay.shrink {
+    top: 10px;
+    left: 10px;
+    transform: scale(0.4);
+    border-radius: 10px;
+    padding: 5px;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    transition: all 0.4s ease;
+  }
+
+  .hero-overlay.shrink .hero-content h2 {
+    opacity: 0;
   }
 
   .hero-logo {
-    max-width: 90vw;
-    max-height: 60vh;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+    transition: all 0.4s ease;
   }
 
-  .credits {
-    margin-top: 20vh;
-    padding: 20px 16px;
+  .hero-content h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    transition: all 0.4s ease;
   }
-}
+
+  /* Spacer for scroll */
+  .spacer {
+    height: 120vh;
+  }
+
+  /* Credits Section */
+  .credits {
+    width: 100%;
+    max-width: 600px;
+    margin: 10vh auto 5vh auto;
+    padding: 30px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+  }
+
+  .credits.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .credits h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+  }
+
+  .credits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .credits ul li {
+    font-size: 1rem;
+    margin: 4px 0;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-overlay {
+      max-width: 70vw;
+      max-height: 30vh;
+    }
+
+    .hero-logo {
+      max-width: 90vw;
+      max-height: 60vh;
+    }
+
+    .credits {
+      margin-top: 20vh;
+      padding: 20px 16px;
+    }
+  }
