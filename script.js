@@ -11,3 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: false }); // passive: false allows preventDefault
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const focusImage = document.getElementById('focusImage');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      focusImage.classList.add('show');
+    } else {
+      focusImage.classList.remove('show');
+    }
+  });
+});
