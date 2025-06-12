@@ -10,9 +10,11 @@
 </head>
 
 <body>
+
+  <!-- Background Video -->
   <div class="video-bg" aria-hidden="true">
-    <iframe 
-      src="https://www.youtube.com/embed/9hZqr1D-aBE?autoplay=1&loop=1&mute=1&playlist=9hZqr1D-aBE&controls=0&showinfo=0&modestbranding=1"
+    <iframe
+      src="https://www.youtube.com/embed/9hZqr1D-aBE?autoplay=1&loop=1&mute=1&playlist=9hZqr1D-aBE&controls=0&modestbranding=1"
       title="Background video showing resort"
       frameborder="0"
       allow="autoplay; fullscreen"
@@ -20,18 +22,21 @@
     </iframe>
   </div>
 
+  <!-- Title Image Overlay (visible on load) -->
   <header class="hero-overlay">
-  <img src="assets/title.png" alt="Mangrove Eco Resort Logo" class="hero-logo" />
+    <img src="assets/title.png" alt="Mangrove Eco Resort Logo" class="hero-logo" />
   </header>
 
+  <!-- Scroll-triggered Focus Image (hidden at start) -->
   <div class="focus-image-container" id="focusImage">
-  <div class="blur-overlay"></div>
-  <img src="assets/joker.jpg" alt="Focus Content" class="focus-image" />
+    <div class="blur-overlay"></div>
+    <img src="assets/joker.jpg" alt="Focus Content" class="focus-image" />
   </div>
 
-  <script src="script.js" defer></script>
-  <div class="spacer"></div>
+  <!-- Spacer to allow scroll -->
+  <div class="scroll-space"></div>
 
+  <script src="script.js" defer></script>
 </body>
 
 </html>
