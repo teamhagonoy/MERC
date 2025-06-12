@@ -13,8 +13,12 @@
   display: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
-  height: 100%;
+  height: auto;
   min-height: 100vh;
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
@@ -123,19 +127,30 @@ html, body {
   transition: all 0.4s ease;
 }
 
+/* Spacer for scroll */
+.spacer {
+  height: 120vh;
+}
+
 /* Credits Section */
 .credits {
-  position: fixed;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px;
+  margin: 10vh auto 5vh auto;
+  padding: 30px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
   text-align: center;
   color: white;
   font-family: 'Poppins', sans-serif;
   opacity: 0;
-  visibility: hidden;
-  z-index: 9;
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.credits.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .credits h3 {
@@ -156,16 +171,6 @@ html, body {
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
-.credits.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(-50%, -45%);
-}
-
-.spacer {
-  height: 200vh;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .hero-overlay {
@@ -176,5 +181,10 @@ html, body {
   .hero-logo {
     max-width: 90vw;
     max-height: 60vh;
+  }
+
+  .credits {
+    margin-top: 20vh;
+    padding: 20px 16px;
   }
 }
