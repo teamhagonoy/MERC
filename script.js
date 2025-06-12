@@ -10,3 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+.spacer {
+  height: 200vh;
+}
