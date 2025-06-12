@@ -20,12 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
       credits.classList.remove('show');
     }
 
-    // Show reveal image
+    // Show image reveal
     const revealPoint = imageReveal.getBoundingClientRect().top;
     if (revealPoint < window.innerHeight * 0.2) {
       imageReveal.classList.add('show');
     } else {
       imageReveal.classList.remove('show');
+    }
+
+    // Fade out credits when image section gets close
+    if (revealPoint < window.innerHeight * 0.6) {
+      credits.classList.add('fade-out');
+    } else {
+      credits.classList.remove('fade-out');
     }
   });
 });
