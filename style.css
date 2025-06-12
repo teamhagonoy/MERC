@@ -1,4 +1,3 @@
-/* Fonts & Reset */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
@@ -47,9 +46,9 @@ html, body {
   border: none;
 }
 
-/* Hero Logo */
+/* Hero Logo (Title Image) */
 .hero-overlay {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -73,7 +72,7 @@ html, body {
   filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
 }
 
-/* Focus Scroll Image (appears when scrolling) */
+/* Scroll-triggered Focus Image */
 .focus-image-container {
   position: fixed;
   inset: 0;
@@ -83,7 +82,7 @@ html, body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  transition: opacity 1s ease, visibility 1s ease;
   z-index: 9999;
 }
 
@@ -98,7 +97,7 @@ html, body {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 
@@ -111,12 +110,12 @@ html, body {
   object-fit: contain;
 }
 
-/* Make sure there's scroll space to trigger the image */
-.spacer {
-  height: 150vh;
+/* Scroll Space */
+.scroll-space {
+  height: 200vh; /* Enough space to trigger scroll */
 }
 
-/* Responsive Adjustments */
+/* Responsive */
 @media (max-width: 768px) {
   .hero-overlay {
     max-width: 70vw;
