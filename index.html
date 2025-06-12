@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en" class="theme light EHoceA">
+<html lang="en" class="theme light EHoceA">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+  <meta name="description" content="Mangrove Eco Resort Complex - Nature, culture, and sustainable tourism in harmony." />
   <title>Mangrove Eco Resort Complex</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="video-bg">
-    <iframe src="https://www.youtube.com/embed/9hZqr1D-aBE?autoplay=1&loop=1&vq=hd1080&mute=1&playlist=9hZqr1D-aBE"
-      frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  <div class="video-bg" aria-hidden="true">
+    <iframe 
+      src="https://www.youtube.com/embed/9hZqr1D-aBE?autoplay=1&loop=1&mute=1&playlist=9hZqr1D-aBE&controls=0&showinfo=0&modestbranding=1"
+      title="Background video showing resort"
+      frameborder="0"
+      allow="autoplay; fullscreen"
+      allowfullscreen>
+    </iframe>
   </div>
 
-  <nav id="amenity-nav">
+  <header class="hero-overlay">
+  <img src="assets/title.png" alt="Mangrove Eco Resort Logo" class="hero-logo" />
+  </header>
+
+  <nav id="amenity-nav" aria-label="Resort Amenities Navigation">
     <ul id="amenity-list">
       <li><a href="amenities/1-storey-villa.html">1-Storey Villa</a></li>
       <li><a href="amenities/2-storey-villa.html">2-Storey Villa</a></li>
@@ -28,12 +38,7 @@
     </ul>
   </nav>
 
-  <div class="hero-overlay">
-    <h1>Welcome to Mangrove Eco Resort Complex</h1>
-    <p>Where nature, culture, and sustainable tourism come together in harmony.</p>
-  </div>
-
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>
