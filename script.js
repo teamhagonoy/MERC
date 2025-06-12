@@ -1,9 +1,13 @@
-// Enable horizontal scrolling with mouse wheel for navigation
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   const amenityList = document.getElementById('amenity-list');
-  
-  amenityList.addEventListener('wheel', function(e) {
-    e.preventDefault();
-    amenityList.scrollLeft += e.deltaY;
-  });
+
+  // Improve scroll behavior and prevent it only on horizontal axis
+  if (amenityList) {
+    amenityList.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        amenityList.scrollLeft += e.deltaY;
+      }
+    }, { passive: false }); // passive: false allows preventDefault
+  }
 });
