@@ -85,6 +85,28 @@ html, body {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   margin: 0;
 }
+.hero-overlay {
+  transition: all 0.4s ease;
+  transform-origin: top center;
+}
+
+.hero-overlay.shrink {
+  transform: scale(0.6);
+  top: 20px;
+}
+
+.hero-logo {
+  transition: all 0.4s ease;
+}
+
+.hero-content h2 {
+  transition: all 0.4s ease;
+  opacity: 1;
+}
+
+.hero-overlay.shrink .hero-content h2 {
+  opacity: 0;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
