@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" class="theme light EHoceA">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
@@ -9,34 +8,35 @@
 </head>
 
 <body>
-  
-  <!-- Background Video -->
-<div class="video-bg" aria-hidden="true">
-  <div class="video-wrapper">
-    <iframe
-      src="https://www.youtube.com/embed/9hZqr1D-aBE?autoplay=1&loop=1&mute=1&playlist=9hZqr1D-aBE&controls=0&modestbranding=1&html5=1"
-      title="MERC walkthorugh"
-      frameborder="0"
-      allow="autoplay; fullscreen"
-      allowfullscreen>
-    </iframe>
-  </div>
-</div>
 
-  <!-- Title Image Overlay (centered) -->
-<header class="hero-overlay">
-  <div class="hero-content">
-    <h2>Welcome to</h2>
-    <img src="assets/title.png" alt="Mangrove Eco Resort Logo" class="hero-logo" />
-  </div>
-</header>
-  
-<script src="script.js" defer></script>
+  <!-- Dark/Light Toggle Button -->
+  <button id="themeToggle" aria-label="Toggle Dark Mode">🌓</button>
 
-<div style="height: 200vh;"></div>
-  
-<div class="spacer"></div>
-  
+  <!-- Background Video (with mobile fallback) -->
+  <div class="video-bg" aria-hidden="true">
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/9hZqr1D-aBE?autoplay=1&loop=1&mute=1&playlist=9hZqr1D-aBE&controls=0&modestbranding=1&html5=1"
+        title="MERC walkthrough"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="mobile-bg-fallback"></div>
+  </div>
+
+  <!-- Title Image Overlay -->
+  <header class="hero-overlay" id="heroOverlay">
+    <div class="hero-content">
+      <h2>Welcome to</h2>
+      <img src="assets/title.png" alt="Mangrove Eco Resort Logo" class="hero-logo" />
+    </div>
+  </header>
+
+  <!-- Scroll Spacer -->
+  <div class="spacer"></div>
+
+  <script src="script.js" defer></script>
 </body>
-
 </html>
