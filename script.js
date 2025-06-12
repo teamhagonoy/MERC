@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
       hero.classList.remove('shrink');
     }
 
-    // Show credits earlier (from 100px)
-    if (scrolled > window.innerHeight * 0.001) {
+    // Show credits on scroll
+    if (scrolled > window.innerHeight * 0.1) {
       credits.classList.add('show');
     } else {
       credits.classList.remove('show');
