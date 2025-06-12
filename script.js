@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const hero = document.querySelector('.hero-overlay');
   const credits = document.getElementById('credits');
+  const imageReveal = document.getElementById('imageReveal');
 
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
@@ -12,11 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
       hero.classList.remove('shrink');
     }
 
-    // Show credits on scroll
+    // Show credits
     if (scrolled > window.innerHeight * 0.1) {
       credits.classList.add('show');
     } else {
       credits.classList.remove('show');
+    }
+
+    // Show reveal image
+    const revealPoint = imageReveal.getBoundingClientRect().top;
+    if (revealPoint < window.innerHeight * 0.2) {
+      imageReveal.classList.add('show');
+    } else {
+      imageReveal.classList.remove('show');
     }
   });
 });
