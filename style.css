@@ -1,4 +1,4 @@
-/* Reset & Fonts */
+/* Fonts & Reset */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
@@ -18,14 +18,8 @@ html, body {
   height: 100%;
   min-height: 100vh;
   font-family: 'DM Sans', sans-serif;
-  overflow: auto;
+  overflow-x: hidden;
   background: #000;
-}
-
-@supports (-webkit-appearance: none) {
-  html, body {
-    height: -webkit-fill-available;
-  }
 }
 
 /* Background Video */
@@ -35,8 +29,9 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   z-index: -1;
+  overflow: hidden;
+  background: #000;
 }
 
 .video-bg iframe {
@@ -46,14 +41,13 @@ html, body {
   width: 100vw;
   height: 56.25vw; /* 16:9 ratio */
   min-height: 100vh;
-  min-width: 177.77vh; /* 16:9 ratio */
+  min-width: 177.77vh;
   transform: translate(-50%, -50%);
-  border: none;
   pointer-events: none;
-  will-change: transform;
+  border: none;
 }
 
-/* Hero Overlay with Image */
+/* Hero Logo */
 .hero-overlay {
   position: absolute;
   top: 50%;
@@ -62,10 +56,10 @@ html, body {
   z-index: 10;
   max-width: 80vw;
   max-height: 50vh;
-  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
   pointer-events: none;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
@@ -79,69 +73,58 @@ html, body {
   filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  #amenity-nav {
-    min-height: 60px;
-    padding: 10px 15px;
-  }
-
-  #amenity-list {
-    gap: 15px;
-    padding: 5px 0;
-  }
-
-  #amenity-list li a {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-
-  .hero-overlay {
-    max-width: 60vw;
-    max-height: 30vh;
-  }
-}
-
-/* Focus Image Overlay Container (initially hidden) */
+/* Focus Scroll Image (appears when scrolling) */
 .focus-image-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-  pointer-events: none;
+  justify-content: center;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.6s ease, visibility 0.6s ease;
   z-index: 9999;
 }
 
-/* Background Blur/Dark Layer */
-.blur-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(8px);
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-
-/* Image Itself */
-.focus-image {
-  max-width: 80vw;
-  max-height: 80vh;
-  z-index: 2;
-  border-radius: 12px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  object-fit: contain;
-}
-
-/* Active State on Scroll */
 .focus-image-container.show {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+.blur-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.focus-image {
+  max-width: 80vw;
+  max-height: 80vh;
+  z-index: 2;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  object-fit: contain;
+}
+
+/* Make sure there's scroll space to trigger the image */
+.spacer {
+  height: 150vh;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-overlay {
+    max-width: 70vw;
+    max-height: 30vh;
+  }
+
+  .focus-image {
+    max-width: 90vw;
+    max-height: 60vh;
+  }
 }
