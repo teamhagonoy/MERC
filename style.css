@@ -91,7 +91,7 @@ html, body {
 }
 
 .hero-overlay.shrink {
-  top: 0.01%;
+  top: 0px;
   left: 10px;
   transform: scale(0.4);
   border-radius: 10px;
