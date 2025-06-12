@@ -69,6 +69,22 @@ html, body {
   object-fit: contain;
   filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
 }
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.hero-content h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
