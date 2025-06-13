@@ -4,9 +4,8 @@ import viteImagemin from 'vite-plugin-imagemin';
 import viteCompression from 'vite-plugin-compression';
 
 export default defineConfig(({ mode }) => {
-  // Load environment variables based on mode
   const env = loadEnv(mode, process.cwd());
-  const base = env.VITE_BASE_URL || './';
+  const base = env.VITE_BASE_URL || '/';
 
   return {
     base,
@@ -14,6 +13,7 @@ export default defineConfig(({ mode }) => {
       outDir: 'dist',
       sourcemap: false,
       assetsInlineLimit: 4096,
+      chunkSizeWarningLimit: 600
     },
     plugins: [
       VitePWA({

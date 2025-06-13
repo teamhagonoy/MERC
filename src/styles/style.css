@@ -1,61 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-tap-highlight-color: transparent;
 }
-*::-webkit-scrollbar {
-  display: none;
-}
-html { scroll-behavior: smooth; }
-body {
+
+html, body {
+  height: 100%;
+  min-height: 100vh;
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
-  background: #000;
-  min-height: 100vh;
+  background: transparent;
 }
 
-/* Preloader */
-#preloader {
-  position: fixed;
-  inset: 0;
-  background: #000;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.loader {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #4CAF50;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1s linear infinite;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* YouTube Background */
+/* YouTube Video Background */
 #youtube-bg {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
 }
+
 #youtube-bg iframe {
   width: 100vw;
   height: 100vh;
-  position: absolute;
-  top: 0; left: 0;
-  object-fit: cover;
+  border: none;
+  pointer-events: none;
 }
 
 /* Hero Overlay */
@@ -66,41 +42,30 @@ body {
   transform: translate(-50%, -50%);
   z-index: 10;
   max-width: 80vw;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
   border-radius: 12px;
   transition: all 0.4s ease;
-  pointer-events: none;
-}
-.hero-overlay.shrink {
-  top: 10px;
-  left: 15%;
-  transform: translateX(-50%) scale(0.4);
-  border-radius: 10px;
 }
 
-.hero-content {
-  text-align: center;
-}
-.hero-content h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  color: #fff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  transition: all 0.4s ease;
-}
-.hero-overlay.shrink h1 { opacity: 0; }
 .hero-logo {
-  max-width: 100%;
+  width: 100%;
+  max-width: 600px;
   object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
-  transition: all 0.4s ease;
+  filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
 }
 
-/* Sections */
-.spacer { height: 120vh; }
+/* Scroll Spacer */
+.spacer {
+  height: 120vh;
+}
+
+/* Credits Section */
 .credits {
+  width: 90%;
   max-width: 600px;
   margin: 10vh auto 5vh auto;
   padding: 30px 20px;
@@ -108,38 +73,60 @@ body {
   border-radius: 12px;
   text-align: center;
   color: white;
+  font-family: 'Poppins', sans-serif;
   opacity: 0;
   transform: translateY(50px);
-  transition: all 0.8s ease;
+  transition: all 0.6s ease;
 }
-.credits.show { opacity: 1; transform: translateY(0); }
-.credits h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-.credits ul li { margin: 4px 0; }
 
+.credits.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.credits h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.credits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.credits ul li {
+  font-size: 1rem;
+  margin: 4px 0;
+}
+
+/* Site Dev Section */
 .image-reveal {
   opacity: 0;
   transform: translateY(50px);
-  transition: all 0.8s ease;
+  transition: all 0.6s ease;
   text-align: center;
   margin: 80px auto;
   max-width: 800px;
   padding: 30px 20px;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
   border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
-.image-reveal.show { opacity: 1; transform: translateY(0); }
+
+.image-reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-reveal h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
 .image-reveal img {
   width: 100%;
   max-width: 600px;
   border-radius: 8px;
 }
-.image-reveal h2 {
-  color: #fff;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
-}
-.image-reveal.show h2 { opacity: 1; transform: translateY(0); }

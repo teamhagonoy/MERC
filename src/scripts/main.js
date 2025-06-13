@@ -1,13 +1,8 @@
 import ScrollReveal from 'scrollreveal';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const preloader = document.getElementById('preloader');
-  window.addEventListener('load', () => {
-    preloader.style.opacity = '0';
-    setTimeout(() => preloader.style.display = 'none', 500);
-  });
-
   const hero = document.querySelector('.hero-overlay');
+
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     hero.classList.toggle('shrink', scrolled > 50);
@@ -19,9 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Load YouTube API player
-let player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('youtube-bg', {
+window.onYouTubeIframeAPIReady = function () {
+  new YT.Player('youtube-bg', {
     videoId: '9hZqr1D-aBE',
     playerVars: {
       autoplay: 1,
@@ -37,5 +31,4 @@ function onYouTubeIframeAPIReady() {
       onReady: event => event.target.mute()
     }
   });
-}
-window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+};
